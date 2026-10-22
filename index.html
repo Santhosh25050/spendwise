@@ -1,0 +1,151 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise | Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="navbar">
+            <a href="#" class="logo">Spend<span>Wise.</span></a>
+            <span class="badge">PERSONAL FINANCE</span>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <p class="eyebrow">YOUR MONEY, YOUR CONTROL</p>
+
+                <h1>Spend smarter.<br>
+                    <span>Live better.</span>
+                </h1>
+
+                <p class="subtitle">
+                    Keep track of your expenses and understand
+                    where your money goes.
+                </p>
+            </section>
+
+            <section class="dashboard">
+
+                <div class="summary-card">
+                    <p>Total expenses</p>
+                    <h2 id="total-expense">₹0.00</h2>
+                    <span>All recorded transactions</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Transactions</p>
+                    <h2 id="transaction-count">0</h2>
+                    <span>Expenses recorded</span>
+                </div>
+
+            </section>
+
+            <section class="tracker">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Add an expense</h2>
+                        <p>Record where your money goes.</p>
+                    </div>
+
+                    <span class="live-badge">● TRACKING</span>
+                </div>
+
+                <form id="expense-form">
+
+                    <div class="form-group">
+                        <label for="expense-name">Expense name</label>
+
+                        <input
+                            type="text"
+                            id="expense-name"
+                            placeholder="e.g. Lunch"
+                            maxlength="60"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="expense-amount">Amount (₹)</label>
+
+                            <input
+                                type="number"
+                                id="expense-amount"
+                                placeholder="150"
+                                min="0.01"
+                                max="100000000"
+                                step="0.01"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expense-category">Category</label>
+
+                            <select id="expense-category" required>
+                                <option value="Food">🍔 Food</option>
+                                <option value="Travel">🚌 Travel</option>
+                                <option value="Shopping">🛍️ Shopping</option>
+                                <option value="Education">📚 Education</option>
+                                <option value="Other">📦 Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="add-btn">
+                        + Add expense
+                    </button>
+
+                    <p id="feedback" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </section>
+
+            <section class="history">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent transactions</h2>
+                        <p>Your expense history.</p>
+                    </div>
+                </div>
+
+                <div id="expense-list"></div>
+
+                <p id="empty-message">
+                    No expenses yet. Add your first expense above!
+                </p>
+
+                <button id="clear-all" class="clear-btn" type="button">
+                    Clear all expenses
+                </button>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>SpendWise © 2026</p>
+            <p>Built for better financial habits.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+```
